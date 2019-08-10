@@ -1,0 +1,19 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+            <mat-nav-list class="sidebar">
+                    <!-- primeiro nível menu -->
+                    <div class="sidebar-mat-list"  >
+                        <a mat-list-item [routerLink] = "['/']"  >
+                            Home
+                        </a>
+                        <a mat-list-item [routerLink] = "['/account']"  >
+                            Accounts
+                        </a>
+                        
+                    </div>
+                </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>  

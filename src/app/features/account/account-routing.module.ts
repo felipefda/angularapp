@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AccountCreateComponent } from './account-create/account-create.component';
 import { AccountListComponent } from './account-list/account-list.component';
+import { AccountFormComponent } from './account-form/account-form.component';
+import { MainLayoutComponent } from "@app/shared/layout/main-layout/main-layout.component";
 
 
 const routes: Routes = [
     {
         path: '',
+        component : MainLayoutComponent,
         children: [
             {
                 path: '',
@@ -18,8 +20,8 @@ const routes: Routes = [
                 component: AccountListComponent,
             },
             {
-                path: 'create',
-                component: AccountCreateComponent,
+                path: 'form/:id',
+                component: AccountFormComponent,
             }
         ]
     }

@@ -4,9 +4,19 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'portal',
+    pathMatch: 'full'
+  },
+  {
+    path: 'portal',
+    loadChildren: () =>
+      import('@app/features/portal/portal.module').then(m => m.PortalModule)
+  },
+  {
     path: 'account',
     loadChildren: () =>
-      import('./features/account/account.module').then(m => m.AccountModule)
+      import('@app/features/account/account.module').then(m => m.AccountModule)
   },
 ];
 
